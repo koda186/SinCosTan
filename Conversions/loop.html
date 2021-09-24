@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+
+
+ function counting() 
+  {
+  
+  var str = "";
+  
+  for (x = 100; x >=0; x-- )
+	  {
+	  str = x + "<br>";
+	  if (x==100)
+	  document.write( "Begining number is " + str );
+	  else if (x==0)
+	  document.write( " And last number is " + str);
+	  else 
+	  document.write( "Next number is " + str);
+	  
+	  }
+  
+  }
+  </script>
+  
+
+</head>
+
+<body>
+
+<p>Counting 100 to 0</p>
+
+
+<button  onclick="counting()"  >Click here to get numbers 100 to 0.</button>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+function miliTime() {
+
+  var date = new Date();
+	var dayName = ["Sunday", "Monday", "Tuesday","Wednesday","Tuesday","Friday", "Saturday"]
+	var day = date.getDay ();
+  var hour = date.getHours();
+
+   document.write ("Today is " + dayName[day]);
+
+   document.write (" and current military time is " + hour + " miniute "+ date.getMinutes()
+   + "  and second " + date.getSeconds() + ".");
+
+
+
+
+}
+</script>
+
+</head>
+
+<body>
+
+<p>Military time display</p>
+
+<button  onclick="miliTime()"  >Click here to get current day and time.</button>
+
+</body>
+</html>

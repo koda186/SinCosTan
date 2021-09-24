@@ -1,0 +1,101 @@
+<html>
+<head>
+<script type="text/javascript">
+    function insertTable()
+    {
+      var deG  = [" "];
+  		var siN = [" "];
+  		var coS  = [" "];
+  		var taN  = [" "];
+  		var radi = [" "];
+
+  		for ( var k = 0; k <= 360; k = k + 15 )
+  		{
+  	      deG.push(k);
+  			  var radiant = k * (3.141593/180);
+  			  radi.push (radiant);
+
+  				var  fixSin = (Math.sin(radiant)).toFixed(5);
+  				//if (fixSin < 0)
+  				//fixSin = " Undefined";
+  				if (fixSin == -0.00000 )
+  				fixSin = 0;
+  				if (fixSin == .50000 )
+  				fixSin = 0.5;
+
+  				siN.push(fixSin);
+
+  				var fixCin = (Math.cos(radiant)).toFixed(5);
+  				//if (fixCin < 0)
+  				//fixCin = " Undefined";
+  				if (fixCin == -0.00000 )
+  				fixCin = 0;
+  				if (fixCin == .50000 )
+  				fixCin = 0.5;
+
+  				coS.push(fixCin);
+
+  				var fixtin = (Math.tan(radiant)).toFixed(5);
+  				//if (fixtin < 0)
+  				//fixtin = " Undefined";
+  				if (fixtin == -0.00000 )
+  				fixtin = 0;
+  				if (fixtin == .50000 )
+  				fixtin = 0.5;
+
+  				taN.push(fixtin);
+  		}
+
+			var num_rows = 27;
+			var num_cols = 5;
+			var theader = "<table id='table1'><thead></thead>";
+			var tbody = "";
+
+				for(var i = 0; i < num_rows; i++)
+			  {
+					tbody += "<tr>";
+					var x = 1;
+					var y = 0;
+					for(var j = 0; j < num_cols; j++)
+					{
+
+					    var bob  = [ radi[x], deG[x], siN[x], coS[x], taN[x] ];
+					    //var bob  = [ "radian", "degree", "sin", "cos", "tan" ];
+							tbody += "<td>";
+							tbody += bob[y];
+							tbody += "</td>";
+
+						x = x + 1;
+						y = y + 1;
+
+					}
+          tbody += "</tr><br />";
+				}
+
+        var tfooter = "</table>";
+				document.getElementById('wrapper').innerHTML = theader + tbody + tfooter;
+  }
+</script>
+<style>
+    #table1
+    {
+        border:solid 1px;
+        border-collapse:collapse;
+        width:100%;
+    }
+
+    #table1 td
+    {
+        border:solid 1px;
+        vertical-align:middle;
+    }
+</style>
+</head>
+<body>
+    <form name="tableForm">
+
+        <button type="button" onclick="insertTable()">Create Table</button>
+        <div id="wrapper"></div>
+    </form>
+</body>
+</html>
