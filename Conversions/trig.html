@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+
+
+function decreeToRadiant()
+{
+
+  document.write ("PI symbol "+ " &nbsp " + " &nbsp " + " &nbsp " +" &nbsp "
+  + " &nbsp " +" &nbsp " + "Degree" +  " &nbsp " + " &nbsp " + " &nbsp " +" &nbsp "
+  + " &nbsp " +" &nbsp " + "  SIN   " +  " &nbsp " + " &nbsp " + " &nbsp " +" &nbsp "
+  + " &nbsp " +" &nbsp "+ "   COS   "+  " &nbsp " + " &nbsp " + " &nbsp " +" &nbsp "
+  + " &nbsp " +" &nbsp "+ "  TAN   " );
+  document.write ("<br>");
+  document.write ("<br>");
+   for ( var k = 0; k <= 360; k = k + 15 )
+   {
+  		var radiant = k * (3.141593/180);
+
+  		var  fixSin = (Math.sin(radiant)).toFixed(5);
+  		//if (fixSin < 0)
+  		//fixSin = " Undefined";
+  		if (fixSin == -0.00000 )
+  		fixSin = 0;
+  		if (fixSin == .50000 )
+  		fixSin = 0.5;
+
+  		var fixCin = (Math.cos(radiant)).toFixed(5);
+  		//if (fixCin < 0)
+  		//fixCin = " Undefined";
+  		if (fixCin == -0.00000 )
+  		fixCin = 0;
+  		if (fixCin == .50000 )
+  		fixCin = 0.5;
+
+  		var fixtin = (Math.tan(radiant)).toFixed(5);
+  		//if (fixtin < 0)
+  		//fixtin = " Undefined";
+  		if (fixtin == -0.00000 )
+  		fixtin = 0;
+  		if (fixtin == .50000 )
+  		fixtin = 0.5;
+
+
+
+  		document.write ( "<table>" +"<tr" + " <td>" + "  " + "</td>" + " <td>" + "PI Symbol"
+  		+ " &nbsp " + " &nbsp " + " &nbsp " +" &nbsp " + " &nbsp " +" &nbsp " + "</td>"  +" <td>"
+  		+ k + " &nbsp " + " &nbsp " + " &nbsp " +" &nbsp " + " &nbsp " +" &nbsp " + "</td>" +" <td>"
+  		+ fixSin + " &nbsp " + " &nbsp " + " &nbsp " +" &nbsp " + " &nbsp " +" &nbsp " + "</td>"
+  		+ "<td>" + fixCin + "  &nbsp "  + " &nbsp " + " &nbsp " + " &nbsp " + " &nbsp " +" &nbsp "
+  		+"</td>" + "<td>" + fixtin + "</td>" + "</tr>" + "</table>");
+
+  		document.write ("<br>");
+  		document.write ("<br>");
+	 }
+}
+</script>
+
+</head>
+<body>
+
+ <button  onclick="decreeToRadiant()"  > Click here to convert Degree into radiant .</button>
+
+
+</body>
+</html>

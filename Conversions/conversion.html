@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+
+
+ function radiantTodegree()
+  {
+  var num = prompt (" Type the number you want to covert into degree!"," " );
+  var k = parseInt(num);
+
+  var degree = 180 / k;
+
+  document.write("If radiant is "+ k + ", "+ " the degree will be " + degree);
+
+  }
+
+  function degreeToRadiant()
+  {
+  var num = prompt (" Type the degree you want to covert into radiant!"," " );
+  var k = parseInt(num);
+
+  var radiant = k * (3.14/180);
+
+  document.write("If degree is "+ k + ", "+ " the radiant will be " + radiant);
+
+  }
+
+
+  </script>
+
+
+</head>
+
+<body>
+
+<p>Conversion</p>
+
+
+<button  onclick="radiantTodegree()"  >Click here to convert radiant into degree.</button>
+<button  onclick="degreeToRadiant()"  >Click here to convert degree into radiant .</button>
+
+</body>
+</html>
